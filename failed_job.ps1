@@ -1,8 +1,10 @@
 ﻿#create failed jobs report########
+$password = ConvertTo-SecureString 'MySecretPassword' -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ('root', $password)
 $sqlinstances = 'DESKTOP-833QAHA\SQL_2019_TRAIN','DESKTOP-833QAHA\SQL_01'
 $testResults = Invoke-DbcCheck -SqlInstance $sqlinstances -Check FailedJob -PassThru
 
-$testResults | Convert-DbcResult|Write-DbcTable -SqlInstance 'DESKTOP-833QAHA\SQL_01' -Database nm |
+$testResults | Convert-DbcResult|Write-DbcTable -SqlInstance 'DESKTOP-833QAHA\SQL_01' -SqlCredential $cred -Database nm |
 Select-Object Describe, Context, Name, Result, FailureMessage 
 
 $ConditionalFormat =$(
