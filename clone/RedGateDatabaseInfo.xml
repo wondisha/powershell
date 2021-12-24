@@ -62,7 +62,7 @@
     <DataWriteAllFilesInOneDirectory>True</DataWriteAllFilesInOneDirectory>
   </WriteToFileOptions>
   <DataFileSet>
-    <Count>12</Count>
+    <Count>13</Count>
     <DataFile>Person.CountryRegion_Data.sql</DataFile>
     <DataFile>Person.StateProvince_Data.sql</DataFile>
     <DataFile>Person.Address_Data.sql</DataFile>
@@ -75,5 +75,6 @@
     <DataFile>Person.Person_Data.sql</DataFile>
     <DataFile>Production.BillOfMaterials_Data.sql</DataFile>
     <DataFile>Person.BusinessEntityContact_Data.sql</DataFile>
+    <DataFile>HumanResources.Employee_Data.sql</DataFile>
   </DataFileSet>
 </DatabaseInformation>
